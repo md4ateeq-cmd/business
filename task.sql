@@ -9,14 +9,19 @@ FROM orders
 WHERE city = 'Mumbai' or city = 'bangalore';
 
 SELECT *
-FROM orders
-where orderdate <  2026-08-10;
+FROM orders where orderdate >  '2026-08-10';
 
 SELECT customername,city,amount
 FROM orders 
 order by amount desc;
 
 SELECT count(orderdate)
-FROM orders 
+FROM orders ;
 
+-- intermediate 6 to 10 ( mukhtar)
+select city ,sum(amount) as totalsales from orders group by city;
+select avg(amount) from orders ;
+select sum(amount) as revenue from orders where status= 'delivered';
+select city,max(amount) as highestvalue from orders group by city;
+select avg(amount) from orders where amount > 10000;
 
